@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FindOTC — Telegram OTC Community Directory</title>
+    <meta name="description" content="Discover Telegram OTC communities for NFTs, Gifts, Usernames, P2P, TON and more with FindOTC.">
+    <meta property="og:title" content="FindOTC — Telegram OTC Community Directory">
+    <meta property="og:description" content="Discover Telegram OTC communities for NFTs, Gifts, Usernames, P2P, TON and more with FindOTC.">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png"> <!-- Placeholder for your future favicon -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Parallax Image & Brand Watermark -->
+    <div class="site-background">
+        <!-- Replace hero-background.jpg in your folder to change the background -->
+        <div class="bg-image" style="background-image: url('assets/images/hero-background.jpg');"></div>
+        <!-- Replace brand-watermark.png with a large transparent F logo -->
+        <div class="bg-watermark" style="background-image: url('assets/images/brand-watermark.png');"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="assets/images/favicon.png" alt="FindOTC" style="width: 32px; height: 32px; border-radius: 8px;">
+
+                <span>FindOTC</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#about" data-i18n="navAbout">About</a>
+                <a href="#achievements" data-i18n="navStats">Achievements</a>
+                <a href="#verified" data-i18n="navVerified">Verified</a>
+                <a href="#folder" data-i18n="navFolder">Folder</a>
+            </nav>
+            <div class="lang-switch">
+                <button id="lang-en" class="active">EN</button>
+                <span>|</span>
+                <button id="lang-ru">RU</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="container reveal">
+            <div class="badge" data-i18n="heroBadge">Telegram OTC Directory</div>
+            <h1 data-i18n="heroTitle">Telegram OTC communities, in one place.</h1>
+            <p class="subtitle" data-i18n="heroSubtitle">Discover Telegram communities for NFTs, Gifts, Usernames, P2P, TON and more.</p>
+            <a href="#" id="hero-btn" class="cta-button primary-glow">
+                <span data-i18n="heroBtn">Open FindOTC</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. ABOUT FINDOTC -->
+    <section id="about" class="about section-padding">
+        <div class="container glass-card reveal">
+            <h2 data-i18n="aboutTitle">About FindOTC</h2>
+            <p data-i18n="aboutText">FindOTC is a directory built to make Telegram OTC communities easier to discover. From NFTs and Telegram Gifts to usernames, P2P trading and TON — FindOTC brings communities together in one place.</p>
+        </div>
+    </section>
+
+    <!-- 3. ACHIEVEMENTS -->
+    <section id="achievements" class="achievements section-padding">
+        <div class="container reveal">
+            <div class="stats-grid">
+                <div class="stat-card glass-card">
+                    <div class="stat-number"><span id="stat-listed">0</span>+</div>
+                    <div class="stat-label" data-i18n="statListed">Listed communities</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number"><span id="stat-verified">0</span>+</div>
+                    <div class="stat-label" data-i18n="statVerified">Verified communities</div>
+                </div>
+                <div class="stat-card glass-card">
+                    <div class="stat-number"><span id="stat-subs">0</span>+</div>
+                    <div class="stat-label" data-i18n="statSubs">Directory subscribers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. LISTED VS VERIFIED -->
+    <section id="status-comparison" class="status-comparison section-padding">
+        <div class="container reveal">
+            <div class="comparison-flow">
+                
+                <!-- Listed State -->
+                <div class="status-card listed glass-card">
+                    <div class="status-header">
+                        <div class="dot dot-green"></div>
+                        <h3 data-i18n="statusListed">Listed</h3>
+                    </div>
+                    <p data-i18n="statusListedDesc">Community is included in the FindOTC directory.</p>
+                </div>
+
+                <!-- Arrow / Flow -->
+                <div class="flow-arrow">
+                    <div class="line"></div>
+                    <span data-i18n="statusVerification">Ownership verification</span>
+                    <div class="arrow-down">↓</div>
+                </div>
+
+                <!-- Verified State -->
+                <div class="status-card verified glass-card">
+                    <div class="status-header">
+                        <div class="dot dot-blue"></div>
+                        <h3 data-i18n="statusVerified">Verified</h3>
+                    </div>
+                    <p data-i18n="statusVerifiedDesc">Community ownership has been confirmed and the community has completed FindOTC verification.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. VERIFIED COMMUNITIES -->
+    <section id="verified" class="verified-benefits section-padding">
+        <div class="container reveal">
+            <h2 data-i18n="benefitsTitle">Why Verification Matters</h2>
+            <p class="benefits-intro" data-i18n="benefitsText">Verified communities have confirmed ownership and receive a visible FindOTC verification status. This helps users identify the official community listed in the directory and distinguish it from copies or fake communities.</p>
+            
+            <ul class="benefits-list glass-card">
+                <li data-i18n="benefit1">Verified status</li>
+                <li data-i18n="benefit2">Custom banner in the directory</li>
+                <li data-i18n="benefit3">Custom description</li>
+                <li data-i18n="benefit4">Participation in selected FindOTC activities</li>
+                <li data-i18n="benefit5">Inclusion in the Verified Communities Folder</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 6. VERIFIED FOLDER -->
+    <section id="folder" class="folder-section section-padding">
+        <div class="container glass-card reveal folder-container">
+            <div class="folder-content">
+                <h2 data-i18n="folderTitle">Verified Communities Folder</h2>
+                <p data-i18n="folderText">Verified Telegram OTC communities can be discovered together in one convenient Telegram folder.</p>
+                <a href="#" id="folder-btn" class="cta-button secondary-btn">
+                    <span data-i18n="folderBtn">Open Verified Folder</span>
+                </a>
+            </div>
+            <!-- Optional image slot for a screenshot of the folder -->
+            <div class="folder-image-slot">
+                <!-- Replace folder-preview.jpg with a screenshot of the Telegram folder -->
+                <img src="assets/images/folder-preview.jpg" alt="Folder Preview" class="image-fallback">
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FINAL CTA / FOOTER -->
+    <footer class="final-cta section-padding">
+        <div class="container reveal">
+            <div class="footer-logo">
+                <img src="assets/images/favicon.png" alt="FindOTC" style="width: 32px; height: 32px; border-radius: 8px;">
+
+            </div>
+            <h2 data-i18n="footerTitle">Find your next OTC community.</h2>
+            <p data-i18n="footerSubtitle">Explore FindOTC.</p>
+            <a href="#" id="footer-btn" class="cta-button primary-glow">
+                <span data-i18n="footerBtn">Open Directory →</span>
+            </a>
+            <div class="copyright">© FindOTC</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

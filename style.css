@@ -1,0 +1,257 @@
+/* ==========================================
+   CSS VARIABLES (COLORS & STYLES)
+========================================== */
+:root {
+    --bg-base: #040609;
+    --bg-surface: rgba(12, 17, 28, 0.6);
+    --brand-cyan: #00d2ff;
+    --brand-purple: #a855f7;
+    --brand-blue: #0066ff;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --card-border: rgba(0, 210, 255, 0.15);
+    --success-green: #22c55e;
+}
+
+/* ==========================================
+   RESET & BASE
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   BACKGROUND & PARALLAX
+========================================== */
+.site-background {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.bg-image {
+    width: 100%; height: 120%; /* Extra height for parallax */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    transition: transform 0.1s ease-out;
+    background-color: #060913; /* Fallback color */
+}
+
+.bg-watermark {
+    position: absolute;
+    top: 30%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw; max-width: 600px; height: 80vw; max-height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05; /* Very subtle */
+    transition: transform 0.1s ease-out;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    background: rgba(4, 6, 9, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 100;
+    padding: 15px 20px;
+    transition: background 0.3s;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Fallback logo design until you insert an image */
+.logo-placeholder {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple));
+    border-radius: 8px;
+    display: flex; justify-content: center; align-items: center;
+    font-weight: bold; color: white;
+}
+.logo-placeholder.large {
+    width: 64px; height: 64px; font-size: 2rem; margin: 0 auto 20px; border-radius: 16px;
+}
+
+.nav-links { display: none; } /* Hidden on mobile */
+@media (min-width: 768px) {
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-main); }
+}
+
+.lang-switch button {
+    background: none; border: none; color: var(--text-muted);
+    font-size: 0.9rem; font-weight: bold; cursor: pointer; padding: 5px;
+}
+.lang-switch button.active { color: var(--brand-cyan); }
+.lang-switch span { color: var(--text-muted); opacity: 0.5; margin: 0 5px; }
+
+/* ==========================================
+   LAYOUT UTILITIES
+========================================== */
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+.section-padding { padding: 80px 0; }
+.glass-card {
+    background: var(--bg-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 30px;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+.cta-button {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+.cta-button:active { transform: scale(0.96); }
+
+.primary-glow {
+    background: linear-gradient(135deg, #00d2ff 0%, #0066ff 100%);
+    box-shadow: 0 4px 20px rgba(0, 210, 255, 0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+.primary-glow:hover {
+    box-shadow: 0 6px 25px rgba(0, 210, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.secondary-btn:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px;
+}
+.hero .badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(0, 210, 255, 0.1);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    color: var(--brand-cyan);
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.hero h1 { font-size: clamp(2rem, 8vw, 4rem); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+.hero .subtitle { font-size: 1.1rem; color: var(--text-muted); max-width: 500px; margin: 0 auto 40px; }
+
+/* ==========================================
+   ABOUT & TYPOGRAPHY
+========================================== */
+h2 { font-size: 1.8rem; margin-bottom: 20px; color: white; }
+p { color: var(--text-muted); font-size: 1rem; }
+
+/* ==========================================
+   ACHIEVEMENTS
+========================================== */
+.stats-grid { display: grid; gap: 15px; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(3, 1fr); } }
+.stat-card { text-align: center; padding: 40px 20px; }
+.stat-number { font-size: 3rem; font-weight: bold; background: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 10px; }
+.stat-label { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; }
+
+/* ==========================================
+   LISTED VS VERIFIED
+========================================== */
+.comparison-flow { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.status-card { width: 100%; max-width: 400px; }
+.status-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.dot-green { background: var(--success-green); box-shadow: 0 0 10px var(--success-green); }
+.dot-blue { background: var(--brand-cyan); box-shadow: 0 0 10px var(--brand-cyan); }
+.status-card h3 { margin: 0; font-size: 1.2rem; }
+.status-card p { font-size: 0.9rem; margin: 0; }
+
+.flow-arrow { display: flex; flex-direction: column; align-items: center; gap: 5px; color: var(--text-muted); font-size: 0.85rem; padding: 10px 0; }
+.flow-arrow .line { width: 1px; height: 30px; background: rgba(255,255,255,0.2); }
+
+/* ==========================================
+   VERIFIED BENEFITS
+========================================== */
+.benefits-intro { margin-bottom: 30px; max-width: 600px; }
+.benefits-list { list-style: none; display: flex; flex-direction: column; gap: 15px; }
+.benefits-list li { display: flex; align-items: center; gap: 10px; color: white; font-weight: 500; }
+.benefits-list li::before { content: '✓'; color: var(--brand-cyan); font-weight: bold; font-size: 1.2rem; }
+
+/* ==========================================
+   FOLDER SECTION
+========================================== */
+.folder-container { display: flex; flex-direction: column; gap: 30px; }
+@media (min-width: 768px) { .folder-container { flex-direction: row; align-items: center; } }
+.folder-content { flex: 1; }
+.folder-content p { margin-bottom: 25px; }
+.folder-image-slot { flex: 1; width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.3); border: 1px dashed rgba(255,255,255,0.2); }
+.image-fallback { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
+
+/* ==========================================
+   FINAL CTA / FOOTER
+========================================== */
+.final-cta { text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; }
+.final-cta h2 { font-size: 2rem; }
+.final-cta p { margin-bottom: 30px; }
+.copyright { margin-top: 60px; color: rgba(255,255,255,0.2); font-size: 0.8rem; }
+
+/* ==========================================
+   ANIMATIONS (SCROLL REVEAL)
+========================================== */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .reveal { transition: none; transform: none; opacity: 1; } }
